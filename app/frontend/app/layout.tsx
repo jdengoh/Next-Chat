@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Navbar";
+
+export const viewport = {
+  maximumScale: 1, // Disable auto-zoom on mobile Safari
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +32,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* <AppSidebar /> */}
+        <main className = "w-full">
+          <Navbar />
+          <div className = "px-4">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
