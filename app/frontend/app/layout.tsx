@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { ThemeProvider } from "../components/provider/ThemeProvider";
-import AppSidebar from "../components/AppSidebar"
+import AppSidebar from "../components/AppSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const viewport = {
@@ -35,15 +35,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           {/* TODO: what is provider? */}
-          <SidebarProvider >
+          <SidebarProvider>
             <AppSidebar />
-            <main className = "w-full">
+            <main className="w-full">
               <Navbar />
-              <div className = "px-4">
-                {children}
-              </div>
+              <div className="px-4">{children}</div>
             </main>
           </SidebarProvider>
         </ThemeProvider>
