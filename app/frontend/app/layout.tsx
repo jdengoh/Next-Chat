@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { ThemeProvider } from "../components/provider/ThemeProvider";
+import AppSidebar from "../components/AppSidebar"
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const viewport = {
   maximumScale: 1, // Disable auto-zoom on mobile Safari
@@ -34,14 +36,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-
-        {/* <AppSidebar /> */}
-        <main className = "w-full">
-          <Navbar />
-          <div className = "px-4">
-            {children}
-          </div>
-        </main>
+          {/* TODO: what is provider? */}
+          <SidebarProvider >
+            <AppSidebar />
+            <main className = "w-full">
+              <Navbar />
+              <div className = "px-4">
+                {children}
+              </div>
+            </main>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
