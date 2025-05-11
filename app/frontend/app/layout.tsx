@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import { ThemeProvider } from "../components/provider/ThemeProvider";
 
 export const viewport = {
   maximumScale: 1, // Disable auto-zoom on mobile Safari
@@ -28,10 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+
         {/* <AppSidebar /> */}
         <main className = "w-full">
           <Navbar />
@@ -39,6 +42,7 @@ export default function RootLayout({
             {children}
           </div>
         </main>
+        </ThemeProvider>
       </body>
     </html>
   );

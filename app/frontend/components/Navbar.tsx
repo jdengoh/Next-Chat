@@ -9,6 +9,9 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 
+  import {useTheme} from "next-themes"
+import { ModeToggle } from "./provider/ThemeProvider";
+
 const Navbar = () => {
     return (
         <nav className="p-3 flex items-center justify-between">
@@ -23,7 +26,17 @@ const Navbar = () => {
 
                 {/* RIGHT */}
                 <div className="flex items-center gap-4">
-                <Moon />
+
+                {/* THEME TOGGLE */}
+                <ModeToggle />
+                {/* <Moon /> */}
+
+
+
+
+
+
+                {/* USER MENU */}
                 <DropdownMenu>
                 <DropdownMenuTrigger>
                 <Avatar>
