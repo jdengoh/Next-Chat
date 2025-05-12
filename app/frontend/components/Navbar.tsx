@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LogOut, MessageSquare, Moon, SidebarIcon, User } from "lucide-react";
@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
 import { ModeToggle } from "./provider/ThemeProvider";
