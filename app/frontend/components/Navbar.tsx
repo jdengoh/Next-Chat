@@ -1,5 +1,7 @@
+'use client'
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogOut, MessageSquare, Moon, User } from "lucide-react";
+import { LogOut, MessageSquare, Moon, SidebarIcon, User } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,14 +11,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { useTheme } from "next-themes";
 import { ModeToggle } from "./provider/ThemeProvider";
+import { SidebarTrigger } from "./ui/sidebar";
+import { useSidebar } from "./ui/sidebar";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
+  const { toggleSidebar } = useSidebar();
   return (
-    <nav className="p-3 flex items-center justify-between">
+    <nav className="p-2 flex items-center justify-between">
       {/* LEFT */}
       <div className="flex items-center gap-4">
+        <Button variant="outline" onClick={toggleSidebar}>
+          <SidebarIcon />
+        </Button>
+        {/* <SidebarTrigger /> */}
         <MessageSquare className="w-6 h-6" />
         <h1 className="text-2xl">Next-Chat</h1>
       </div>

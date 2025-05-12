@@ -19,7 +19,7 @@ import { Button } from "./ui/button";
 
 const AppSidebar = () => {
   return (
-    <Sidebar>
+    <Sidebar collapsible="offcanvas" side="left">
       {/* 1. Sidebar Header */}
       <SidebarHeader>
         <SidebarMenu>
@@ -32,7 +32,7 @@ const AppSidebar = () => {
             {/* 1.2 New Chat Button */}
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" type="button">
+                <Button variant="outline" type="button">
                   <SquarePen />
                 </Button>
               </TooltipTrigger>
