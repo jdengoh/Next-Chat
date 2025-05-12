@@ -25,5 +25,5 @@
   "MD041": false,
 
   //MD051/link-fragments : Link fragments should be valid : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md051.md
-  "MD051": false
+  "MD051": false,
 }
