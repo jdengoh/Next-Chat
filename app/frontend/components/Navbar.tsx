@@ -15,6 +15,7 @@ import { ModeToggle } from "./provider/ThemeProvider";
 import { SidebarTrigger } from "./ui/sidebar";
 import { useSidebar } from "./ui/sidebar";
 import { Button } from "./ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 const Navbar = () => {
   const { toggleSidebar } = useSidebar();
@@ -22,10 +23,16 @@ const Navbar = () => {
     <nav className="p-2 flex items-center justify-between">
       {/* LEFT */}
       <div className="flex items-center gap-4">
-        <Button variant="outline" onClick={toggleSidebar}>
-          <SidebarIcon />
-        </Button>
-        {/* <SidebarTrigger /> */}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outline" onClick={toggleSidebar}>
+              <SidebarIcon />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Toggle Sidebar</p>
+          </TooltipContent>
+        </Tooltip>
         <MessageSquare className="w-6 h-6" />
         <h1 className="text-2xl">Next-Chat</h1>
       </div>

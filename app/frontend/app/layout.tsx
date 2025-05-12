@@ -48,7 +48,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* TODO: what is provider? */}
+          {/* TODO: what is provider? */} 
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
             <main className="w-full">
